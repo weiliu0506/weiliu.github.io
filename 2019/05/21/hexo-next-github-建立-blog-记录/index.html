@@ -112,7 +112,7 @@
 <meta property="og:description" content="借用官网的一句话  Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://weiliu0506.github.io/images/hexo_init.jpg">
-<meta property="og:updated_time" content="2019-05-22T02:53:22.180Z">
+<meta property="og:updated_time" content="2019-05-22T06:01:24.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo + next + github 建立 blog 记录">
 <meta name="twitter:description" content="借用官网的一句话  Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。">
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-22 10:53:22" itemprop="dateModified" datetime="2019-05-22T10:53:22+08:00">2019-05-22</time>
+                <time title="修改时间：2019-05-22 14:01:24" itemprop="dateModified" datetime="2019-05-22T14:01:24+08:00">2019-05-22</time>
               
             
           </span>
@@ -433,24 +433,51 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><ol>
-<li><p>首先要安排Node.js, 下载地址<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a>, 安装后扫行下面的命令查看版本号</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm -v</span><br><span class="line">6.9.0</span><br><span class="line"><span class="meta">$</span> node -v</span><br><span class="line">v12.1.0</span><br></pre></td></tr></table></figure>
+<li><p><strong>首先要安排Node.js, 下载地址<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a>, 安装后执行下面的命令查看版本号</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm -v</span><br><span class="line"><span class="meta">$</span> node -v</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>安装hexo-cli</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<li><p><strong>安装hexo-cli</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-cli -g</span><br><span class="line"><span class="meta">$</span> hexo -v</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>初始化博客目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init myblog</span><br><span class="line"><span class="meta">$</span> cd myblog</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
+<li><p><strong>初始化blog目录</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init myblog</span><br><span class="line"><span class="meta">$</span> cd myblog</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
+<p> 安装完后的目录结构结下:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml  hexo的配置文件</span><br><span class="line">├── db.json</span><br><span class="line">├── node_modules</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds  存放模版的文件夹, 用于新建markdown文件时填充Front-matter的内容,如:title, data, tags等.</span><br><span class="line">│   ├── draft.md</span><br><span class="line">│   ├── page.md</span><br><span class="line">│   └── post.md</span><br><span class="line">├── source  存放资源的文件夹, 如文章,图片,page等</span><br><span class="line">│   └── _posts  存放文章的文件夹, 对应scaffolds/post.md的模版</span><br><span class="line">└── themes  存放主题的文件夹</span><br><span class="line">    └── landscape hexo默认的主题</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>本地启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<li><p><strong>本地启动</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>s 是server的简写, 用于本地启动服务</p>
 </blockquote>
 </li>
-<li>在浏览器输入<a href="localhost:4000" target="_blank" rel="noopener">localhost:4000</a>,可以看到一个初始的blog已经建立好了<br><img src="/images/hexo_init.jpg" alt></li>
+<li><p><strong>在浏览器输入<a href="localhost:4000" target="_blank" rel="noopener">localhost:4000</a>,可以看到一个初始的blog已经建立好了</strong><br><img src="/images/hexo_init.jpg" alt></p>
+</li>
 </ol>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><h3 id="NexT-安装"><a href="#NexT-安装" class="headerlink" title="NexT 安装"></a>NexT 安装</h3><h3 id="xxx"><a href="#xxx" class="headerlink" title="xxx"></a>xxx</h3><h2 id="网上发布"><a href="#网上发布" class="headerlink" title="网上发布"></a>网上发布</h2><p>1.下载<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a> </p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p> 觉得页面样式不好看? 没关系! hexo可以更换不同样式的主题, 去<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网</a>找一个自己喜欢的吧.这里以NexT为例子</p>
+<ol>
+<li><p><strong>首先安排主题把主题文件夹下载到blog目录的/themes/下, 如: /themes/next</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> Git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>选择hexo所用主题</strong></p>
+<p> 打开hexo的配置文件_config.yml, 修改theme:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><ol>
+<li><p>新建一篇文章</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new 第一篇文章</span><br><span class="line">INFO  Created: ~/hexo/blog/source/_posts/第一篇文章.md</span><br></pre></td></tr></table></figure>
+<p> 内容如下:</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 第一篇文章</span><br><span class="line">date: 2019-05-22 12:08:35</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加分类和标签</p>
+<blockquote>
+<p>注: 分类是有层级的, 标签没有<br> 修改”第一篇文章”内容如下:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 第一篇文章</span><br><span class="line">date: 2019-05-22 12:08:35</span><br><span class="line">categories:</span><br><span class="line">    - 分类1</span><br><span class="line">    - 分类2</span><br><span class="line">tags:</span><br><span class="line">    - 标签1</span><br><span class="line">    - 标签2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="网上发布"><a href="#网上发布" class="headerlink" title="网上发布"></a>网上发布</h2><p>1.下载<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a> </p>
 
       
     </div>
@@ -625,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始安装"><span class="nav-text">开始安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题"><span class="nav-text">更换主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT-安装"><span class="nav-text">NexT 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xxx"><span class="nav-text">xxx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网上发布"><span class="nav-text">网上发布</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始安装"><span class="nav-text">开始安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题"><span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写文章"><span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网上发布"><span class="nav-text">网上发布</span></a></li></ol></div>
             
 
           </div>
