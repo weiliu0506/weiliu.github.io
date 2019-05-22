@@ -24,6 +24,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-fill-left.min.css?v=1.0.2">
+
 
 
 
@@ -96,14 +103,17 @@
 
 
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="an apple a day keeps the doctor away">
+<meta property="og:type" content="website">
 <meta property="og:title" content="tags">
-<meta property="og:url" content="https://weiliu0506.github.io/weiliu.github.io/tags/index.html">
+<meta property="og:url" content="https://weiliu0506.github.io/tags/index.html">
 <meta property="og:site_name" content="I am 老刘">
+<meta property="og:description" content="an apple a day keeps the doctor away">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-21T10:06:52.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tags">
+<meta name="twitter:description" content="an apple a day keeps the doctor away">
 
 
 
@@ -111,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="https://weiliu0506.github.io/weiliu.github.io/tags/">
+  <link rel="canonical" href="https://weiliu0506.github.io/tags/">
 
 
 
@@ -354,11 +364,15 @@
             <div class="tag-cloud-title">
               
               
-              暂无标签
+                
+                  
+                
+              
+              目前共计 1 个标签
             </div>
             <div class="tag-cloud-tags">
               
-                
+                <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a>
               
             </div>
           </div>
@@ -408,8 +422,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="老刘">
+            
               <p class="site-author-name" itemprop="name">老刘</p>
-              <div class="site-description motion-element" itemprop="description"></div>
+              <div class="site-description motion-element" itemprop="description">an apple a day keeps the doctor away</div>
           </div>
 
           
@@ -419,7 +435,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -427,6 +443,23 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -506,6 +539,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -631,6 +666,38 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 
